@@ -2,6 +2,9 @@
 
 JhaTech Growth is a premium, modern MERN stack web platform designed to accelerate local Indian retail shops and services (such as saree shops, boutiques, bakeries, and salons) into the digital era. It combines automated AI audits, competitive intelligence, transparent billing, and a zero-educational-requirement referral program.
 
+> [!NOTE]
+> For a detailed breakdown of system data flows, database relationships, and technology choices, please review the [ARCHITECTURE.md](file:///c:/Users/Aftab Alam/Desktop/JhaTech-project/ARCHITECTURE.md) blueprint.
+
 ---
 
 ## 🌟 Key Platform Modules
