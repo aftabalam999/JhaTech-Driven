@@ -71,11 +71,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>+91 12345 67890</span>
               </li>
               <li className="pt-2">
                 <a
-                  href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20know%20more%20about%20JhaTech%20Digital%20Growth%20Platform."
+                  href="https://wa.me/910000000000?text=Hi!%20I%20want%20to%20know%20more%20about%20JhaTech%20Digital%20Growth%20Platform."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-lg bg-green-600/10 border border-green-500/25 px-3 py-1.5 text-xs text-green-400 hover:bg-green-600 hover:text-white transition-all"
