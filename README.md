@@ -98,6 +98,6 @@ Configure the following Environment Variables in your backend server dashboard:
 
 ### 2. Frontend Hosting (e.g., Vercel)
 Configure the following Environment Variable in your Vercel project panel:
-- `VITE_API_BASE_URL` = `https://jhatech-driven.onrender.com` (your production backend URL)
+- `VITE_API_BASE_URL` = `https://localhost:5000` (your production backend URL)
 
 *Note:* A `vercel.json` configuration file is pre-configured in the project root to ensure React client-side routing rewrites work correctly and prevent 404 errors on refreshes.
