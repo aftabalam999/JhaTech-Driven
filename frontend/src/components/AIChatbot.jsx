@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Bot, X, Send, Loader2, Sparkles, MessageCircle } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function AIChatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/partner/query', {
+      const response = await fetch(`${API_BASE_URL}/api/partner/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

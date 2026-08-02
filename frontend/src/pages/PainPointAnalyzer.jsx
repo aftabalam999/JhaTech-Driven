@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, HelpCircle, AlertCircle, CheckCircle, Sparkles, MessageCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function PainPointAnalyzer() {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ export default function PainPointAnalyzer() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/analysis', {
+      const response = await fetch(`${API_BASE_URL}/api/analysis`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

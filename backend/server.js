@@ -12,8 +12,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middlewares
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: '*', // Allow all origins for simple testing/development setup
+  origin: allowedOrigins.length > 0 ? allowedOrigins : '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

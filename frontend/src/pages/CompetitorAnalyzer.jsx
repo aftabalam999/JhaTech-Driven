@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, TrendingUp, ShieldAlert, Award, Compass, Search, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function CompetitorAnalyzer() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function CompetitorAnalyzer() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/competitor', {
+      const response = await fetch(`${API_BASE_URL}/api/competitor`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

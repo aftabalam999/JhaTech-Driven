@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Bot, X, Mail, ShieldAlert, Sparkles, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function AuthModal({ onClose, onLogin }) {
   const [testEmail, setTestEmail] = useState('rahulkumar@gmail.com');
@@ -10,7 +11,7 @@ export default function AuthModal({ onClose, onLogin }) {
   useEffect(() => {
     const initGoogleAuth = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/config');
+        const response = await fetch(`${API_BASE_URL}/api/auth/config`);
         const data = await response.json();
         if (data.googleClientId && window.google) {
           window.google.accounts.id.initialize({

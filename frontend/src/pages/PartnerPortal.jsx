@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Award, Copy, Check, MessageSquare, IndianRupee, HelpCircle, Send, Plus, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) {
   const [partner, setPartner] = useState(null);
@@ -35,7 +36,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
     setError('');
     
     try {
-      const response = await fetch(`http://localhost:5000/api/partner/${partner.referralCode}/upi`, {
+      const response = await fetch(`${API_BASE_URL}/api/partner/${partner.referralCode}/upi`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ upiId: newUpi })
@@ -77,7 +78,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:5000/api/partner/google-login', {
+      const response = await fetch(`${API_BASE_URL}/api/partner/google-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, name })
@@ -113,7 +114,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
 
   const fetchPartnerData = async (code) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/partner/${code}`);
+      const response = await fetch(`${API_BASE_URL}/api/partner/${code}`);
       const data = await response.json();
       if (response.ok) {
         setPartner(data);
@@ -139,7 +140,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/partner/register', {
+      const response = await fetch(`${API_BASE_URL}/api/partner/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(registration)
@@ -176,7 +177,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
     setError('');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/partner/${partner.referralCode}/sale`, {
+      const response = await fetch(`${API_BASE_URL}/api/partner/${partner.referralCode}/sale`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ businessName: simulationName })
@@ -208,7 +209,7 @@ export default function PartnerPortal({ googleUser, onTriggerLogin, onLogout }) 
     setChatLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/partner/query', {
+      const response = await fetch(`${API_BASE_URL}/api/partner/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
